@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>OrderList</ion-title>
+  </ion-toolbar>
+</ion-header>
+  <ion-list>
+    <ion-item *ngFor="let order of orderList; let i = index">
+      <ion-label (click)="navigate(i)">Order Num: {{order.id}}, Cargo Type: {{order.cargoType}}, Ship To : {{order.shipToName}}</ion-label>
+    </ion-item>
+  </ion-list>
+<ion-content>
+
+</ion-content>

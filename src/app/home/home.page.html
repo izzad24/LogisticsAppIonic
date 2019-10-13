@@ -1,14 +1,24 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Logistics app
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>About</ion-card-subtitle>
+        <ion-card-title>Izzad Logistic App</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Welcome to Izzad's Logistic App. Please click button below to start creating orders.
+        <br>
+        <ion-button [routerLink]="'/cargo-create'">Create Order</ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-button [routerLink]="'/order-list'">See all order</ion-button>
   </div>
 </ion-content>

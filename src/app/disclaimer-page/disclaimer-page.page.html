@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Disclaimer Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="DisclaimerFormGroup">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Terms and Conditions</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>Quis id ea amet minim quis laboris duis voluptate tempor pariatur esse. Nisi commodo nisi enim
+        dolore. Ipsum aliqua aliquip officia sit nisi voluptate Lorem veniam nulla sit nisi labore aute. Aliquip nisi
+        duis
+        ex irure ea.
+        Officia culpa amet esse consequat. Exercitation ad enim Lorem ut nisi enim nisi ad exercitation nostrud non
+        incididunt cupidatat consequat. Ut non aliquip culpa voluptate nostrud veniam ad commodo adipisicing minim et
+        esse. In in incididunt mollit nulla eiusmod nulla ad elit non. Dolore consectetur ipsum incididunt et eu
+        consectetur duis eu.
+      </ion-card-content>
+      <ion-item>
+        <ion-label class="ion-text-wrap">I have read and agree to the Terms and Conditions</ion-label>
+        <ion-checkbox color="dark" slot="start" formControlName="disclaimer" checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-wrap">I declare my shipment comply with the Terms and Condition and do not contain hazardous material
+        </ion-label>
+        <ion-checkbox color="dark" slot="start" formControlName="hazard" checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-text-wrap">Yes! I need Insurance</ion-label>
+        <ion-checkbox color="dark" slot="start" formControlName="insurance"></ion-checkbox>
+      </ion-item>
+    </ion-card>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="block" (click)="onSubmit()" [disabled]="!isValid()">Next</ion-button>
+</ion-footer>

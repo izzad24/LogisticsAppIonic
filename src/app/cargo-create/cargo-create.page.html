@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cargo Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="cargoFormGroup">
+    <ion-list>
+      <ion-item>
+        <ion-label>Cargo type<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <app-select [options]="typeOptions" [selectedValue]="cargoFormGroup.value.cargoType"
+            (selectOption)="onSelect($event, 'cargoType')"></app-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Weight in KG<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-textarea formControlName="weight" class="list-option"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Dimensions in cm (WxLxH)<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-textarea formControlName="dimension" class="list-option"></ion-textarea>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+    <ion-button expand="block" (click)="onSubmit()" [disabled]="!isValid()">Next</ion-button>
+  </ion-footer>

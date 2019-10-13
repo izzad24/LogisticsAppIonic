@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shipping Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="ShippingDetailForm">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">Recipient Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input type="text" formControlName = "shipTocontactName" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Recipient Contact Num <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input placeholder = "+60-xxxxxxxxxx" type="tel" inputmode="tel" formControlName = "shipToContactNum" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Recipient Address</ion-label>
+            <ion-input placeholder="Address Line 1" formControlName = "shipToAdd" ></ion-input>
+            <ion-input placeholder="Address Line 2" formControlName = "shipToAdd2" ></ion-input>
+            <ion-input placeholder="City" formControlName = "shipToCity" ></ion-input>
+            <ion-input placeholder="State" formControlName = "shipToState" ></ion-input>
+            <ion-input placeholder="Zip Code(12345)" formControlName = "shipToPostcode" type = "numeric" inputmode="numeric"></ion-input>
+            <ion-input placeholder="Country" formControlName = "shipToCountry" ></ion-input>
+          </ion-item>
+          
+          <ion-item>
+              <ion-label position="stacked">Sender Name <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input type="text" formControlName = "shipFromContactName" ></ion-input>
+            </ion-item>
+
+          <ion-item>
+              <ion-label position="stacked">Sender Contact Num <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input placeholder = "+60-xxxxxxxxxx" type="tel" inputmode="tel" formControlName = "shipFromContactNum" ></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="stacked">Sender Address</ion-label>
+              <ion-input placeholder="Address Line 1" formControlName = "shipFromAdd" ></ion-input>
+              <ion-input placeholder="Address Line 2" formControlName = "shipFromAdd2" ></ion-input>
+              <ion-input placeholder="City" formControlName = "shipFromCity" ></ion-input>
+              <ion-input placeholder="State" formControlName = "shipFromState" ></ion-input>
+              <ion-input placeholder="Zip Code(12345)" formControlName = "shipFromPostcode" type = "numeric" inputmode="numeric"></ion-input>
+              <ion-input placeholder="Country" formControlName = "shipFromCountry" ></ion-input>
+            </ion-item>
+        </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+    <ion-button expand="block" 
+    (click)="onSubmit()" 
+    [disabled]="!isValid()"
+    >Next</ion-button>
+  </ion-footer>
